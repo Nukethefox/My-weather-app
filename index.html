@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Spain Forecast Comparative</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Forecast models comparative for spain</h1>
+        <nav class="main-nav">
+            <a href="index.html" class="active">Forecasts</a>
+            <a href="observaciones.html">Current WX</a>
+            <a href="aeronautica.html">Aeronautical WX</a>
+        </nav>
+    </header>
+    <h3>Global RUN</h3>
+    <div style="text-align: center;">
+        <label for="globalRun">Select run for all images (you might still have to individually select some of them):</label>
+        <select id="globalRun">
+            <option value="">—</option>
+            <option value="00">00Z</option>
+            <option value="06">06Z</option>
+            <option value="12">12Z</option>
+            <option value="18">18Z</option>
+        </select>
+    </div>
+    <br><br>
+    <hr>
+    <h3>Precipitation</h3>
+    <div class="controls">
+        <p>Forecast time from now: <span id="hourLabel">1</span></p>
+        <input type="range" min="1" max="51" value="1" id="hourSlider">
+        <br><br>
+    </div>
+    <div class="grid">
+        <div class="model">
+            <label for="aromeRun">Run AROME HD:</label>
+            <select id="aromeRun">
+                <option value="00">00Z</option>
+                <option value="03">03Z</option>
+                <option value="06">06Z</option>
+                <option value="09" selected>09Z</option>
+                <option value="12">12Z</option>
+                <option value="15">15Z</option>
+                <option value="18">18Z</option>
+                <option value="21">21Z</option>
+            </select>
+            <img id="arome">
+        </div>
+        <div class="model">
+            <label for="iconRun">Run ICON-EU:</label>
+            <select id="iconRun">
+                <option value="00">00Z</option>
+                <option value="06">06Z</option>
+                <option value="12" selected>12Z</option>
+                <option value="18">18Z</option>
+            </select>
+            <img id="icon">
+        </div>
+        <div class="model">
+            <label for="gfsRun">Run GFS:</label>
+            <select id="gfsRun">
+                <option value="00">00Z</option>
+                <option value="06">06Z</option>
+                <option value="12" selected>12Z</option>
+                <option value="18">18Z</option>
+            </select>
+            <img id="gfs">
+        </div>
+    </div>
+    <hr>
+    <h3>Temperature</h3>
+    <div class="controlsTEMP">
+        <p>Forecast time from now: <span id="hourLabelTEMP">1</span></p>
+        <input type="range" min="1" max="51" value="1" id="hourSliderTEMP">
+        <br><br>
+        <div class="grid">
+            <div class="model">
+                <label for="aromeRunTEMP">Run AROME HD:</label>
+                <select id="aromeRunTEMP">
+                    <option value="00">00Z</option>
+                    <option value="03">03Z</option>
+                    <option value="06">06Z</option>
+                    <option value="09" selected>09Z</option>
+                    <option value="12">12Z</option>
+                    <option value="15">15Z</option>
+                    <option value="18">18Z</option>
+                    <option value="21">21Z</option>
+                </select>
+                <img id="aromeTEMP">
+            </div>
+            <div class="model">
+                <label for="iconRunTEMP">Run ICON-EU:</label>
+                <select id="iconRunTEMP">
+                    <option value="00">00Z</option>
+                    <option value="06">06Z</option>
+                    <option value="12">12Z</option>
+                    <option value="18" selected>18Z</option>
+                </select>
+                <img id="iconTEMP">
+            </div>
+            <div class="model">
+                <label for="gfsRunTEMP">Run GFS:</label>
+                <select id="gfsRunTEMP">
+                    <option value="00">00Z</option>
+                    <option value="06">06Z</option>
+                    <option value="12">12Z</option>
+                    <option value="18" selected>18Z</option>
+                </select>
+                <img id="gfsTEMP">
+            </div>
+        </div>
+        <hr>
+        <h3>Wind</h3>
+        <div class="controlsWIND">
+            <p>Forecast time from now: <span id="hourLabelWIND">1</span></p>
+            <input type="range" min="1" max="51" value="1" id="hourSliderWIND">
+            <br><br>
+        </div>
+        <div class="grid">
+            <div class="model">
+                <label for="aromeRunWIND">Run AROME HD:</label>
+                <select id="aromeRunWIND">
+                    <option value="00">00Z</option>
+                    <option value="03">03Z</option>
+                    <option value="06">06Z</option>
+                    <option value="09" selected>09Z</option>
+                    <option value="12">12Z</option>
+                    <option value="15">15Z</option>
+                    <option value="18">18Z</option>
+                    <option value="21">21Z</option>
+                </select>
+                <img id="aromeWIND">
+            </div>
+            <div class="model">
+                <label for="iconRunWIND">Run ICON-EU:</label>
+                <select id="iconRunWIND">
+                    <option value="00">00Z</option>
+                    <option value="06" selected>06Z</option>
+                    <option value="12">12Z</option>
+                    <option value="18">18Z</option>
+                </select>
+                <img id="iconWIND" crossorigin="anonymous">
+            </div>
+            <div class="model">
+                <label for="gfsRunWIND">Run GFS:</label>
+                <select id="gfsRunWIND">
+                    <option value="00">00Z</option>
+                    <option value="06">06Z</option>
+                    <option value="12">12Z</option>
+                    <option value="18" selected>18Z</option>
+                </select>
+                <img id="gfsWIND" crossorigin="anonymous">
+            </div>
+        </div>
+        <footer>
+            DATA FROM Meteociel
+        </footer>
+    </div>
+    <script>
+        const aromePrefixes = {
+            "00": "arome_sp1",
+            "03": "arome3z_sp1",
+            "06": "arome_sp1",
+            "09": "arome9z_sp1",
+            "12": "arome_sp1",
+            "15": "arome15z_sp1",
+            "18": "arome_sp1",
+            "21": "arome21z_sp1"
+        };
+        document.getElementById("globalRun").addEventListener("change", function () {
+            let run = this.value;
+            if (!run) return;
+            let allSelects = document.querySelectorAll("select[id*='Run']");
+            allSelects.forEach(select => {
+                let exists = [...select.options].some(o => o.value === run);
+                if (exists) {
+                    select.value = run;
+                    select.dispatchEvent(new Event("change"));
+                }
+            });
+        });
+        function getRunString(runHour) {
+            let now = new Date();
+            let currentUTC = now.getUTCHours();
+            let runDate = new Date(now);
+            if (parseInt(runHour) > currentUTC) {
+                runDate.setUTCDate(runDate.getUTCDate() - 1);
+            }
+            let year = runDate.getUTCFullYear();
+            let month = String(runDate.getUTCMonth() + 1).padStart(2, "0");
+            let day = String(runDate.getUTCDate()).padStart(2, "0");
+            return `${year}${month}${day}${runHour}`;
+        }
+        function parseRunTime(run) {
+            let year = parseInt(run.slice(0, 4));
+            let month = parseInt(run.slice(4, 6)) - 1;
+            let day = parseInt(run.slice(6, 8));
+            let hour = parseInt(run.slice(8, 10));
+            return new Date(Date.UTC(year, month, day, hour));
+        }
+        let slider = document.getElementById("hourSlider");
+        let aromeRunSelector = document.getElementById("aromeRun");
+        let gfsRunSelector = document.getElementById("gfsRun");
+        let iconRunSelector = document.getElementById("iconRun");
+        function updateImages() {
+            let selectedRun = aromeRunSelector.value;
+            let aromePrefix = aromePrefixes[selectedRun];
+            let hourOffset = parseInt(slider.value);
+            let now = new Date();
+            let validTime = new Date(now.getTime() + hourOffset * 3600000);
+            document.getElementById("hourLabel").innerText = "+" + hourOffset + "h";
+            let runAROME = getRunString(aromeRunSelector.value);
+            let runGFS = getRunString(gfsRunSelector.value);
+            let runICON = getRunString(iconRunSelector.value);
+            let runAROMEDate = parseRunTime(runAROME);
+            let runGFSDate = parseRunTime(runGFS);
+            let runICONDate = parseRunTime(runICON);
+            let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
+            let rawGfsHour = Math.round((validTime - runGFSDate) / 3600000);
+            let gfsHour = Math.round(rawGfsHour / 3) * 3;
+            if (gfsHour < 3) gfsHour = 3;
+            let iconHour = Math.round((validTime - runICONDate) / 3600000);
+            let aromeURL = `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-1-${aromeHour}-0.png`;
+            let gfsURL = `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-779SP.GIF`;
+            let iconURL = `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-1-${iconHour}-0.png`;
+            document.getElementById("arome").src = aromeURL;
+            document.getElementById("gfs").src = gfsURL;
+            document.getElementById("icon").src = iconURL;
+        }
+        slider.addEventListener("input", updateImages);
+        aromeRunSelector.addEventListener("change", updateImages);
+        gfsRunSelector.addEventListener("change", updateImages);
+        iconRunSelector.addEventListener("change", updateImages);
+        updateImages();
+        let sliderTEMP = document.getElementById("hourSliderTEMP");
+        function updateImagesTEMP() {
+            let hourOffset = parseInt(sliderTEMP.value);
+            document.getElementById("hourLabelTEMP").innerText = "+" + hourOffset + "h";
+            let now = new Date();
+            let validTime = new Date(now.getTime() + hourOffset * 3600000);
+            let gfsRun = document.getElementById("gfsRunTEMP").value;
+            let iconRun = document.getElementById("iconRunTEMP").value;
+            let aromeRun = document.getElementById("aromeRunTEMP").value;
+            let runGFS = getRunString(gfsRun);
+            let runICON = getRunString(iconRun);
+            let runAROME = getRunString(aromeRun);
+            let runGFSDate = parseRunTime(runGFS);
+            let runICONDate = parseRunTime(runICON);
+            let runAROMEDate = parseRunTime(runAROME);
+            let gfsHour = Math.round((validTime - runGFSDate) / 3600000);
+            let iconHour = Math.round((validTime - runICONDate) / 3600000);
+            let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
+            if (gfsHour < 3) {
+                gfsHour = 3;
+            }
+            gfsHour = Math.round(gfsHour / 3) * 3;
+            let aromePrefix = aromePrefixes[aromeRun];
+            let gfsURL =
+                `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-580SP.GIF`;
+            let iconURL =
+                `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-0-${iconHour}-0.png`;
+            let aromeURL =
+                `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-0-${aromeHour}-0.png`;
+            document.getElementById("gfsTEMP").src = gfsURL;
+            document.getElementById("iconTEMP").src = iconURL;
+            document.getElementById("aromeTEMP").src = aromeURL;
+        }
+        sliderTEMP.addEventListener("input", updateImagesTEMP);
+        document.getElementById("gfsRunTEMP").addEventListener("change", updateImagesTEMP);
+        document.getElementById("iconRunTEMP").addEventListener("change", updateImagesTEMP);
+        document.getElementById("aromeRunTEMP").addEventListener("change", updateImagesTEMP);
+        updateImagesTEMP();
+        let sliderWIND = document.getElementById("hourSliderWIND");
+        function updateImagesWIND() {
+            let hourOffset = parseInt(sliderWIND.value);
+            document.getElementById("hourLabelWIND").innerText = "+" + hourOffset + "h";
+            let now = new Date();
+            let validTime = new Date(now.getTime() + hourOffset * 3600000);
+            let aromeRun = document.getElementById("aromeRunWIND").value;
+            let gfsRun = document.getElementById("gfsRunWIND").value;
+            let iconRun = document.getElementById("iconRunWIND").value;
+            let runGFS = getRunString(gfsRun);
+            let runICON = getRunString(iconRun);
+            let runAROME = getRunString(aromeRun);
+            let runGFSDate = parseRunTime(runGFS);
+            let runICONDate = parseRunTime(runICON);
+            let runAROMEDate = parseRunTime(runAROME);
+            let gfsHour = Math.round((validTime - runGFSDate) / 3600000);
+            let iconHour = Math.round((validTime - runICONDate) / 3600000);
+            let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
+            let aromePrefix = aromePrefixes[aromeRun];
+            if (gfsHour < 3) {
+                gfsHour = 3;
+            }
+            gfsHour = Math.round(gfsHour / 3) * 3;
+            let gfsURL =
+                `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-289SP.GIF`;
+            let iconURL =
+                `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-11-${iconHour}-0.png`;
+            let aromeURL =
+                `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-11-${aromeHour}-0.png`;
+            document.getElementById("gfsWIND").src = gfsURL;
+            document.getElementById("iconWIND").src = iconURL;
+            document.getElementById("aromeWIND").src = aromeURL;
+        }
+        sliderWIND.addEventListener("input", updateImagesWIND);
+        document.getElementById("gfsRunWIND").addEventListener("change", updateImagesWIND);
+        document.getElementById("iconRunWIND").addEventListener("change", updateImagesWIND);
+        document.getElementById("aromeRunWIND").addEventListener("change", updateImagesWIND);
+        updateImagesWIND();
+    </script>
+</body>
+</html>

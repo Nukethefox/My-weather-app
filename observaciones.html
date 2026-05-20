@@ -1,157 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Current Weather</title>
+    <title>Meteorología actual</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Current Weather</h1>
-        <nav class="main-nav">
-            <a href="index.html">Forecasts</a>
-            <a href="observaciones.html" class="active">Current WX</a>
-            <a href="aeronautica.html">Aeronautical WX</a>
-        </nav>
+      <h1>Meteorología actual</h1>
+      <nav class="main-nav">
+        <a href="index.html">Predicciones</a>
+        <a href="observaciones.html" class="active">Meteorología actual</a>
+        <a href="aeronautica.html">Meteorología aeronáutica</a>
+      </nav>
     </header>
     <div class="grid">
-        <div class="model">
-            <p style="font-size: 15px;">Current phenomena</p>
-            <img src="https://www.meteociel.fr/cartes_obs/temp2_sp_1h.png">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">Current temperature</p>
-            <img src="https://www.meteociel.fr/cartes_obs/temp_sp.png">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">Current wind</p>
-            <img src="https://www.meteociel.fr/cartes_obs/vent_sp.png">
-        </div>
+      <div class="model">
+        <p style="font-size: 15px;">Fenómenos meteorológicos</p>
+        <img src="https://www.meteociel.fr/cartes_obs/temp2_sp_1h.png">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Temperatura</p>
+        <img src="https://www.meteociel.fr/cartes_obs/temp_sp.png">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Viento</p>
+        <img src="https://www.meteociel.fr/cartes_obs/vent_sp.png">
+      </div>
     </div>
     <div class="grid">
-        <div class="model">
-            <p>
-                <label for="acumulacionHoras">Rain accumulation</label>
-                <select id="acumulacionHoras">
-                    <option value="01">Last hour</option>
-                    <option value="24">Last 24 hours</option>
-                </select>
-            </p>
-            <img id="mapaAcumulacion">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">Clouds coverage</p>
-            <img src="https://www.meteociel.fr/cartes_obs/nebu_sp.png">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">Wind speed max</p>
-            <img src="https://www.meteociel.fr/cartes_obs/rafales_sp.png">
-        </div>
+      <div class="model">
+        <p>
+          <label for="acumulacionHoras">Acumulación de lluvia</label>
+          <select id="acumulacionHoras">
+            <option value="01">Última hora</option>
+            <option value="24">Últimas 24 horas</option>
+          </select>
+        </p>
+        <img id="mapaAcumulacion">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Cobertura de nubes</p>
+        <img src="https://www.meteociel.fr/cartes_obs/nebu_sp.png">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Velocidad viento máxima</p>
+        <img src="https://www.meteociel.fr/cartes_obs/rafales_sp.png">
+      </div>
     </div>
     <div class="grid">
-        <div class="model">
-            <p style="font-size: 15px;">Pressure</p>
-            <img src="https://www.meteociel.fr/cartes_obs/pression2_sp.png">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">Humidity</p>
-            <img src="https://www.meteociel.fr/cartes_obs/humi_sp.png">
-        </div>
-        <div class="model">
-        </div>
+      <div class="model">
+        <p style="font-size: 15px;">Presión</p>
+        <img src="https://www.meteociel.fr/cartes_obs/pression2_sp.png">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Humedad</p>
+        <img src="https://www.meteociel.fr/cartes_obs/humi_sp.png">
+      </div>
+      <div class="model">
+      </div>
     </div>
     <hr>
     <div class="grid">
-        <div class="model">
-            <p style="font-size: 15px;">SAT Visible (only daytime)</p>
-            <img src="https://modeles20.meteociel.fr/satellite/animsatviscolmtgsp.gif">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">SAT IR</p>
-            <img src="https://modeles20.meteociel.fr/satellite/animsatirmtgsp.gif">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">SAT Visible+IR</p>
-            <img src="https://modeles20.meteociel.fr/satellite/animsatsandvisirmtgsp.gif">
-        </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT Visible (solo diurno)</p>
+        <img src="https://modeles20.meteociel.fr/satellite/animsatviscolmtgsp.gif">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT IR</p>
+        <img src="https://modeles20.meteociel.fr/satellite/animsatirmtgsp.gif">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT Visible+IR</p>
+        <img src="https://modeles20.meteociel.fr/satellite/animsatsandvisirmtgsp.gif">
+      </div>
     </div>
     <div class="grid">
-        <div class="model">
-            <p style="font-size: 15px;">SAT IR fixed image</p>
-            <img src="https://img.allmetsat.com/sat/msg_fes-espana_portugal-ir039.jpg">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">SAT IR EU</p>
-            <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_CentralEurope.jpg">
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">SAT IR EU+AFR+Atlantic</p>
-            <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_LowResolution.jpg">
-        </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT IR imágen fija</p>
+        <img src="https://img.allmetsat.com/sat/msg_fes-espana_portugal-ir039.jpg">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT IR Europa</p>
+        <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_CentralEurope.jpg">
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">SAT IR EU+AFR+Atlántico</p>
+        <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_LowResolution.jpg">
+      </div>
+    </div>
+    <hr>
+    <div style="display: grid; grid-template-columns: 1fr; gap: 15px; padding: 20px;">
+      <div class="model">
+        <p style="font-size: 15px;">Radar WINDY</p>
+        <iframe width="900" height="600" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=6&overlay=radar&product=radar&level=surface&lat=40.187&lon=-3.563" frameborder="0"></iframe>
+      </div>
     </div>
     <hr>
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px;">
-        <div class="model">
-            <p style="font-size: 15px;">AEMET RADAR</p>
-            <iframe src="https://www.aemet.es/es/eltiempo/observacion/radar" width="100%" height="90%" style="border:none;"></iframe>
-        </div>
-        <div class="model">
-            <p style="font-size: 15px;">EUMETSAT OPERA RADAR</p>
-            <img id="operaImg" src="">
-            <input type="range" id="operaSlider" min="0" max="72" step="1" value="72">
-            <p>UTC time: <span id="operaLabel"></span></p>
-        </div>
+      <div class="model">
+        <p style="font-size: 15px;">Radar AEMET</p>
+        <iframe src="https://www.aemet.es/es/eltiempo/observacion/radar" width="100%" height="90%" style="border:none;"></iframe>
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Radar EUMETSAT OPERA</p>
+        <img id="operaImg" src="">
+        <input type="range" id="operaSlider" min="0" max="72" step="1" value="72">
+        <p>UTC time: <span id="operaLabel"></span></p>
+      </div>
     </div>
-    <footer>
-        DATA FROM Meteociel, EUMETSAT, AEMET, EUMETNET
-    </footer>
+    <footer>Datos de Meteociel (Meteo-France), EUMETSAT, AEMET, EUMETNET, WINDY</footer>
     <script>
-        const selectorAcumulacion = document.getElementById("acumulacionHoras");
-        const imagenAcumulacion = document.getElementById("mapaAcumulacion");
-        function actualizarMapaLluvia() {
-            let valor = selectorAcumulacion.value;
-            if (valor === "01") {
-                imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr1h_sp.png";
-            }
-            if (valor === "24") {
-                imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr2_sp.png";
-            }
+      const selectorAcumulacion = document.getElementById("acumulacionHoras");
+      const imagenAcumulacion = document.getElementById("mapaAcumulacion");
+      function actualizarMapaLluvia() {
+        let valor = selectorAcumulacion.value;
+        if (valor === "01") {
+          imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr1h_sp.png";
         }
-        selectorAcumulacion.addEventListener("change", actualizarMapaLluvia);
-        actualizarMapaLluvia();
-        const operaImg = document.getElementById("operaImg");
-        const operaSlider = document.getElementById("operaSlider");
-        const operaLabel = document.getElementById("operaLabel");
-        operaSlider.value = 72;
-        const operaBaseURL = "https://cdn.fmi.fi/demos/eumetnet-web-site-radar-animator/new-images/";
-        let ultimaImagenUTC;
-        function calcularUltimaImagen() {
-            let utc = new Date();
-            utc.setMinutes(utc.getMinutes() - 15);
-            let minutos = utc.getMinutes();
-            utc.setMinutes(minutos - (minutos % 5));
-            ultimaImagenUTC = utc;
+        if (valor === "24") {
+          imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr2_sp.png";
         }
-        function actualizarImagenOpera() {
-            let offset = (72 - parseInt(operaSlider.value)) * 5;
-            let fecha = new Date(ultimaImagenUTC);
-            fecha.setMinutes(fecha.getMinutes() - offset);
-            let year = fecha.getUTCFullYear();
-            let month = (fecha.getUTCMonth() + 1).toString().padStart(2, "0");
-            let day = fecha.getUTCDate().toString().padStart(2, "0");
-            let hour = fecha.getUTCHours().toString().padStart(2, "0");
-            let minute = fecha.getUTCMinutes().toString().padStart(2, "0");
-            let timestamp = `${year}${month}${day}${hour}${minute}`;
-            let url = `${operaBaseURL}${timestamp}_Odyssey_NewMax_composite.gif`;
-            operaImg.src = url;
-            operaLabel.innerText =
-                fecha.getUTCHours().toString().padStart(2, "0") + ":" +
-                fecha.getUTCMinutes().toString().padStart(2, "0");
-        }
-        operaSlider.addEventListener("input", actualizarImagenOpera);
-        calcularUltimaImagen();
-        actualizarImagenOpera();
+      }
+      selectorAcumulacion.addEventListener("change", actualizarMapaLluvia);
+      actualizarMapaLluvia();
+      const operaImg = document.getElementById("operaImg");
+      const operaSlider = document.getElementById("operaSlider");
+      const operaLabel = document.getElementById("operaLabel");
+      operaSlider.value = 72;
+      const operaBaseURL = "https://cdn.fmi.fi/demos/eumetnet-web-site-radar-animator/new-images/";
+      let ultimaImagenUTC;
+      function calcularUltimaImagen() {
+        let utc = new Date();
+        utc.setMinutes(utc.getMinutes() - 15);
+        let minutos = utc.getMinutes();
+        utc.setMinutes(minutos - (minutos % 5));
+        ultimaImagenUTC = utc;
+      }
+      function actualizarImagenOpera() {
+        let offset = (72 - parseInt(operaSlider.value)) * 5;
+        let fecha = new Date(ultimaImagenUTC);
+        fecha.setMinutes(fecha.getMinutes() - offset);
+        let year = fecha.getUTCFullYear();
+        let month = (fecha.getUTCMonth() + 1).toString().padStart(2, "0");
+        let day = fecha.getUTCDate().toString().padStart(2, "0");
+        let hour = fecha.getUTCHours().toString().padStart(2, "0");
+        let minute = fecha.getUTCMinutes().toString().padStart(2, "0");
+        let timestamp = `${year}${month}${day}${hour}${minute}`;
+        let url = `${operaBaseURL}${timestamp}_Odyssey_NewMax_composite.gif`;
+        operaImg.src = url;
+        operaLabel.innerText =
+          fecha.getUTCHours().toString().padStart(2, "0") + ":" +
+          fecha.getUTCMinutes().toString().padStart(2, "0");
+      }
+      operaSlider.addEventListener("input", actualizarImagenOpera);
+      calcularUltimaImagen();
+      actualizarImagenOpera();
     </script>
-</body>
+  </body>
 </html>

@@ -1,182 +1,183 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>Aeronautical Weather</title>
+    <title>Meteorología aeronáutica</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Aeronautical Weather</h1>
-        <nav class="main-nav">
-            <a href="index.html">Forecasts</a>
-            <a href="observaciones.html">Current WX</a>
-            <a href="aeronautica.html" class="active">Aeronautical WX</a>
-        </nav>
+      <h1>Meteorología aeronáutica</h1>
+      <nav class="main-nav">
+        <a href="index.html">Predicciones</a>
+        <a href="observaciones.html">Meteorología actual</a>
+        <a href="aeronautica.html" class="active">Meteorología aeronáutica</a>
+      </nav>
     </header>
-    <p style="text-align: center;"><a href="https://metar-taf.com/?c=401357.-24500.6" target="_blank" style="color: white;">Useful: METAR-TAF Visual Decoder</a></p>
+    <p style="text-align: center;">
+      <a href="https://metar-taf.com/?c=401357.-24500.6" target="_blank" style="color: white;">Página útil: METAR-TAF Visual Decoder</a>
+    </p>
     <div class="grid">
-        <div class="model"></div>
-        <div class="model">
-            <p>
-                <label for="MetarDinamico">METAR</label>
-                <select id="MetarDinamico">
-                    <option value="LEBL">Barcelona</option>
-                    <option value="LELL">Sabadell</option>
-                    <option value="LEGE">Girona</option>
-                    <option value="LESU">La Seu</option>
-                    <option value="LEDA">Lleida</option>
-                    <option value="LERS">Reus</option>
-                    <option value="LEPA">Palma</option>
-                    <option value="LEIB">Ibiza</option>
-                    <option value="LEMH">Menorca</option>
-                    <option value="LESO">San Sebastián</option>
-                    <option value="LEBB">Bilbao</option>
-                    <option value="LEZG">Zaragoza</option>
-                    <option value="LETL">Teruel</option>
-                    <option value="LEVC">Valencia</option>
-                    <option value="LEAL">Alicante</option>
-                    <option value="LEAB">Albacete</option>
-                    <option value="LEMD">Madrid</option>
-                    <option value="LESA">Salamanca</option>
-                    <option value="LEAS">Asturias</option>
-                    <option value="LEST">Santiago</option>
-                    <option value="LEBZ">Badajoz</option>
-                    <option value="LEBA">Córdoba</option>
-                    <option value="LEZL">Sevilla</option>
-                    <option value="LEMG">Málaga</option>
-                    <option value="LEGR">Granada</option>
-                </select>
-            </p>
-            <div id="metarWidget"></div>
-        </div>
-        <div class="model"></div>
+      <div class="model"></div>
+      <div class="model">
+        <p>
+          <label for="MetarDinamico">Ver METAR de:</label>
+          <select id="MetarDinamico">
+            <option value="LEBL">Barcelona</option>
+            <option value="LELL">Sabadell</option>
+            <option value="LEGE">Girona</option>
+            <option value="LESU">La Seu</option>
+            <option value="LEDA">Lleida</option>
+            <option value="LERS">Reus</option>
+            <option value="LEPA">Palma</option>
+            <option value="LEIB">Ibiza</option>
+            <option value="LEMH">Menorca</option>
+            <option value="LESO">San Sebastián</option>
+            <option value="LEBB">Bilbao</option>
+            <option value="LEZG">Zaragoza</option>
+            <option value="LETL">Teruel</option>
+            <option value="LEVC">Valencia</option>
+            <option value="LEAL">Alicante</option>
+            <option value="LEAB">Albacete</option>
+            <option value="LEMD">Madrid</option>
+            <option value="LESA">Salamanca</option>
+            <option value="LEAS">Asturias</option>
+            <option value="LEST">Santiago</option>
+            <option value="LEBZ">Badajoz</option>
+            <option value="LEBA">Córdoba</option>
+            <option value="LEZL">Sevilla</option>
+            <option value="LEMG">Málaga</option>
+            <option value="LEGR">Granada</option>
+          </select>
+        </p>
+        <hr>
+        <div id="metarWidget"></div>
+      </div>
+      <div class="model"></div>
     </div>
     <div style="text-align: center;">
-        <p>METAR CLOUDS MEANING REMINDER:</p>
-        <p>FEW | SCT (scattered, nubes dispersas) | BKN (broken, nubes rotas o casi enteras) | OVC (overcast, cielo cubierto)</p>
+      <p>Recordatorio significado abreviaturas nubes METAR:</p>
+      <p>FEW (pocas) | SCT (scattered, nubes dispersas) | BKN (broken, nubes rotas o casi enteras) | OVC (overcast, cielo cubierto)</p>
     </div>
     <div class="model">
-        <div class="model-title"></div>
-        <iframe
-            src="https://aviationweather.gov/data/metar/?decoded=1&ids=&taf=1"
-            width="90%"
-            height="1000px"
-            style="border:none; border-radius:8px;">
-        </iframe>
+      <div class="model-title"></div>
+      <iframe src="https://aviationweather.gov/data/metar/?decoded=0&ids=&taf=1" width="90%" height="750px" style="border:none; border-radius:8px;"></iframe>
     </div>
     <br>
     <div class="model">
-        <label for="vedurRun">Select run:</label>
-        <select id="vedurRun">
-            <option value="0000">00Z</option>
-            <option value="0600">06Z</option>
-            <option value="1200">12Z</option>
-            <option value="1800">18Z</option>
-        </select>
-        <div class="model-title">SIGWX</div>
-        <br>
-        <img id="vedurImage" src="https://www.vedur.is/photos/flugkort/PGDE14_EGRR_0000.png" style="width:90%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
-        <br>
-        <h3>KEY:</h3>
-        <img src="simbolos.png" style="width:15%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
-        <br>
-        <p>Jet Stream: Triangulo = 50 kts | Linea larga = 10 kts | Linea corta = 5 kts</p>
-        <p>Abreviaturas: ISOL = Isolated (CB aislados) | OCNL = Occasional (CB ocasionales) | FRQ = Frequent (frecuentes) | EMBD = Embedded (CB dentro de otras nubes)</p>
+      <div class="model-title">Carta SIGWX:</div>
+      <label for="vedurRun">Selecciona hora de la predicción:</label>
+      <select id="vedurRun">
+        <option value="0000">00:00 UTC</option>
+        <option value="0600">06:00 UTC</option>
+        <option value="1200">12:00 UTC</option>
+        <option value="1800">18:00 UTC</option>
+      </select>
+      <br>
+      <img id="vedurImage" src="https://www.vedur.is/photos/flugkort/PGDE14_EGRR_0000.png" style="width:90%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
+      <br>
+      <h3>Leyenda:</h3>
+      <img src="simbolos.png" style="width:15%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
+      <br>
+      <p>Jet Stream: Triangulo = 50 kts | Linea larga = 10 kts | Linea corta = 5 kts</p>
+      <p>Abreviaturas: ISOL = Isolated (CB aislados) | OCNL = Occasional (CB ocasionales) | FRQ = Frequent (frecuentes) | EMBD = Embedded (CB dentro de otras nubes)</p>
     </div>
     <div class="model">
-        <hr>
-        <h3>Vientos y temperatura en altura</h3>
-        <div class="controls">
-            <label>Hora forecast: <span id="horaLabel">+6h</span></label><br>
-            <input type="range" id="horaSlider" min="0" max="5" step="1" value="0">
-            <br><br>
-            <label>Altitud: <span id="altLabel">FL050</span></label><br>
-            <input type="range" id="altSlider" min="0" max="8" step="1" value="0">
-        </div>
-        <img id="windTempImage"
-            src="https://aviationweather.gov/data/products/fax/F06_wind_050_h.gif"
-            style="width:75%; height:auto; border-radius:8px; display:block; margin:10px auto;">
+      <hr>
+      <h3>Vientos y temperatura en altura</h3>
+      <div class="controls">
+        <label>Hora de la predicción: <span id="horaLabel">+6h</span>
+        </label>
+        <br>
+        <input type="range" id="horaSlider" min="0" max="5" step="1" value="0" style="width: 250px;">
+        <br>
+        <br>
+        <label>Altitud: <span id="altLabel">FL050</span>
+        </label>
+        <br>
+        <input type="range" id="altSlider" min="0" max="8" step="1" value="0" style="width: 250px;">
+      </div>
+      <img id="windTempImage" src="https://aviationweather.gov/data/products/fax/F06_wind_050_h.gif" style="width:75%; height:auto; border-radius:8px; display:block; margin:10px auto;">
     </div>
+    <footer>Datos de Metar-Taf, AWC, Oficina Meteorológica de Islandia</footer>
     <script>
-        const vedurSelect = document.getElementById("vedurRun");
-        const vedurImage = document.getElementById("vedurImage");
-        const vedurBase = "https://www.vedur.is/photos/flugkort/PGDE14_EGRR_";
-        vedurSelect.addEventListener("change", () => {
-            const val = vedurSelect.value;
-            vedurImage.src = `${vedurBase}${val}.png`;
-        });
-        const metarAirports = {
-            LEBL: { target: "B79OZqK8", name: "Josep Tarradellas Barcelona-El Prat Airport" },
-            LELL: { target: "UyJgar7y", name: "Sabadell Airfield" },
-            LEGE: { target: "EO8ypORI", name: "Girona-Costa Brava Airport" },
-            LESU: { target: "7L6pXNUr", name: "Pirineus - la Seu d'Urgel Airport" },
-            LEDA: { target: "qXehcCux", name: "Lleida-Alguaire Airport" },
-            LERS: { target: "op9mfYDy", name: "Reus Airport" },
-            LEPA: { target: "uyFmNOzQ", name: "Palma de Mallorca Airport" },
-            LEIB: { target: "ix8EzPGP", name: "Ibiza Airport" },
-            LEMH: { target: "guGL6LkA", name: "Menorca Airport" },
-            LESO: { target: "fXRxEu6u", name: "San Sebastián Airport" },
-            LEBB: { target: "AyT89PFG", name: "Bilbao Airport" },
-            LEZG: { target: "OP9vYhur", name: "Zaragoza Airport" },
-            LETL: { target: "aEhmDBjY", name: "Teruel Airport" },
-            LEVC: { target: "xPAUxK6Y", name: "Valencia Airport" },
-            LEAL: { target: "5LNpmmbX", name: "Alicante-Elche Miguel Hernández Airport" },
-            LEAB: { target: "vk30kcgv", name: "Albacete Airport / Los Llanos Air Base" },
-            LEMD: { target: "B4THtt1l", name: "Adolfo Suárez Madrid–Barajas Airport" },
-            LESA: { target: "2mHBah4o", name: "Salamanca Airport" },
-            LEAS: { target: "zyL20Bir", name: "Asturias Airport" },
-            LEST: { target: "00xHQPFE", name: "Santiago-Rosalía de Castro Airport" },
-            LEBZ: { target: "lSpRJ7Ez", name: "Badajoz Airport" },
-            LEBA: { target: "nSOkmKwg", name: "Córdoba Airport" },
-            LEZL: { target: "6C39lVB7", name: "Seville Airport" },
-            LEMG: { target: "mVp9jcsq", name: "Málaga-Costa del Sol Airport" },
-            LEGR: { target: "wumeOq67", name: "F.G.L. Airport Granada-Jaén Airport" }
-        };
-        const selector = document.getElementById("MetarDinamico");
-        const contenedor = document.getElementById("metarWidget");
-        function cargarMETAR() {
-            let icao = selector.value;
-            let datos = metarAirports[icao];
-            contenedor.innerHTML = "";
-            let enlace = document.createElement("a");
-            enlace.href = "https://metar-taf.com/metar/" + icao;
-            enlace.id = "metartaf-" + datos.target;
-            enlace.style = "font-size:18px;font-weight:500;color:#000;width:100%;height:280px;display:block";
-            enlace.innerText = "METAR " + datos.name;
-            contenedor.appendChild(enlace);
-            let script = document.createElement("script");
-            script.async = true;
-            script.defer = true;
-            script.crossOrigin = "anonymous";
-            script.src = "https://metar-taf.com/embed-js/" + icao + "?bg_color=000000&layout=landscape&qnh=hPa&rh=dp&target=" + datos.target;
-            contenedor.appendChild(script);
-        }
-        selector.addEventListener("change", cargarMETAR);
-        cargarMETAR();
-        const horaSlider = document.getElementById("horaSlider");
-        const altSlider = document.getElementById("altSlider");
-        const horaLabel = document.getElementById("horaLabel");
-        const altLabel = document.getElementById("altLabel");
-        const windImage = document.getElementById("windTempImage");
-        const horas = ["06", "12", "18", "24", "30", "36"];
-        const horasTexto = ["+6h", "+12h", "+18h", "+24h", "+30h", "+36h"];
-        const altitudes = ["050", "100", "180", "240", "300", "340", "390", "450", "630"];
-        const altTexto = ["FL050", "FL100", "FL180", "FL240", "FL300", "FL340", "FL390", "FL450", "FL630"];
-        function actualizarMapa() {
-            let horaIndex = horaSlider.value;
-            let altIndex = altSlider.value;
-            let hora = horas[horaIndex];
-            let alt = altitudes[altIndex];
-            horaLabel.innerText = horasTexto[horaIndex];
-            altLabel.innerText = altTexto[altIndex];
-            windImage.src =
-                `https://aviationweather.gov/data/products/fax/F${hora}_wind_${alt}_h.gif`;
-        }
-        horaSlider.addEventListener("input", actualizarMapa);
-        altSlider.addEventListener("input", actualizarMapa);
-        actualizarMapa();
+      const vedurSelect = document.getElementById("vedurRun");
+      const vedurImage = document.getElementById("vedurImage");
+      const vedurBase = "https://www.vedur.is/photos/flugkort/PGDE14_EGRR_";
+      vedurSelect.addEventListener("change", () => {
+        const val = vedurSelect.value;
+        vedurImage.src = `${vedurBase}${val}.png`;
+      });
+      const metarAirports = {
+        LEBL: {target: "B79OZqK8",name: "Josep Tarradellas Barcelona-El Prat Airport"},
+        LELL: {target: "UyJgar7y", name: "Sabadell Airfield"},
+        LEGE: {target: "EO8ypORI", name: "Girona-Costa Brava Airport"},
+        LESU: {target: "7L6pXNUr", name: "Pirineus - la Seu d'Urgel Airport"},
+        LEDA: {target: "qXehcCux", name: "Lleida-Alguaire Airport"},
+        LERS: {target: "op9mfYDy", name: "Reus Airport"},
+        LEPA: {target: "uyFmNOzQ", name: "Palma de Mallorca Airport"},
+        LEIB: {target: "ix8EzPGP", name: "Ibiza Airport"},
+        LEMH: {target: "guGL6LkA", name: "Menorca Airport"},
+        LESO: {target: "fXRxEu6u", name: "San Sebastián Airport"},
+        LEBB: {target: "AyT89PFG", name: "Bilbao Airport"},
+        LEZG: {target: "OP9vYhur", name: "Zaragoza Airport"},
+        LETL: {target: "aEhmDBjY", name: "Teruel Airport"},
+        LEVC: {target: "xPAUxK6Y", name: "Valencia Airport"},
+        LEAL: {target: "5LNpmmbX", name: "Alicante-Elche Miguel Hernández Airport"},
+        LEAB: {target: "vk30kcgv", name: "Albacete Airport / Los Llanos Air Base"},
+        LEMD: {target: "B4THtt1l", name: "Adolfo Suárez Madrid–Barajas Airport"},
+        LESA: {target: "2mHBah4o", name: "Salamanca Airport"},
+        LEAS: {target: "zyL20Bir", name: "Asturias Airport"},
+        LEST: {target: "00xHQPFE", name: "Santiago-Rosalía de Castro Airport"},
+        LEBZ: {target: "lSpRJ7Ez", name: "Badajoz Airport"},
+        LEBA: {target: "nSOkmKwg", name: "Córdoba Airport"},
+        LEZL: {target: "6C39lVB7", name: "Seville Airport"},
+        LEMG: {target: "mVp9jcsq", name: "Málaga-Costa del Sol Airport"},
+        LEGR: {target: "wumeOq67", name: "F.G.L. Airport Granada-Jaén Airport"}
+      };
+      const selector = document.getElementById("MetarDinamico");
+      const contenedor = document.getElementById("metarWidget");
+      function cargarMETAR() {
+        let icao = selector.value;
+        let datos = metarAirports[icao];
+        contenedor.innerHTML = "";
+        let enlace = document.createElement("a");
+        enlace.href = "https://metar-taf.com/metar/" + icao;
+        enlace.id = "metartaf-" + datos.target;
+        enlace.style = "font-size:18px;font-weight:500;color:#000;width:100%;height:280px;display:block";
+        enlace.innerText = "METAR " + datos.name;
+        contenedor.appendChild(enlace);
+        let script = document.createElement("script");
+        script.async = true;
+        script.defer = true;
+        script.crossOrigin = "anonymous";
+        script.src = "https://metar-taf.com/embed-js/" + icao + "?bg_color=000000&layout=landscape&qnh=hPa&rh=dp&target=" + datos.target;
+        contenedor.appendChild(script);
+      }
+      selector.addEventListener("change", cargarMETAR);
+      cargarMETAR();
+      const horaSlider = document.getElementById("horaSlider");
+      const altSlider = document.getElementById("altSlider");
+      const horaLabel = document.getElementById("horaLabel");
+      const altLabel = document.getElementById("altLabel");
+      const windImage = document.getElementById("windTempImage");
+      const horas = ["06", "12", "18", "24", "30", "36"];
+      const horasTexto = ["+6h", "+12h", "+18h", "+24h", "+30h", "+36h"];
+      const altitudes = ["050", "100", "180", "240", "300", "340", "390", "450", "630"];
+      const altTexto = ["FL050", "FL100", "FL180", "FL240", "FL300", "FL340", "FL390", "FL450", "FL630"];
+      function actualizarMapa() {
+        let horaIndex = horaSlider.value;
+        let altIndex = altSlider.value;
+        let hora = horas[horaIndex];
+        let alt = altitudes[altIndex];
+        horaLabel.innerText = horasTexto[horaIndex];
+        altLabel.innerText = altTexto[altIndex];
+        windImage.src = `https://aviationweather.gov/data/products/fax/F${hora}_wind_${alt}_h.gif`;
+      }
+      horaSlider.addEventListener("input", actualizarMapa);
+      altSlider.addEventListener("input", actualizarMapa);
+      actualizarMapa();
     </script>
-</body>
+  </body>
 </html>

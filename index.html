@@ -51,7 +51,7 @@
           <option value="18">18:00 UTC</option>
           <option value="21">21:00 UTC</option>
         </select>
-        <img id="arome">
+        <img id="arome" referrerpolicy="no-referrer">
       </div>
       <div class="model">
         <label for="iconRun">ICON-EU:</label>
@@ -65,7 +65,7 @@
           <option value="18">18:00 UTC</option>
           <option value="21">21:00 UTC</option>
         </select>
-        <img id="icon">
+        <img id="icon" referrerpolicy="no-referrer">
       </div>
       <div class="model">
         <label for="gfsRun">GFS:</label>
@@ -75,7 +75,7 @@
           <option value="12" selected>12:00 UTC</option>
           <option value="18">18:00 UTC</option>
         </select>
-        <img id="gfs">
+        <img id="gfs" referrerpolicy="no-referrer">
       </div>
     </div>
     <hr>
@@ -99,7 +99,7 @@
             <option value="18">18:00 UTC</option>
             <option value="21">21:00 UTC</option>
           </select>
-          <img id="aromeTEMP">
+          <img id="aromeTEMP" referrerpolicy="no-referrer">
         </div>
         <div class="model">
           <label for="iconRunTEMP">ICON-EU:</label>
@@ -113,7 +113,7 @@
             <option value="18">18:00 UTC</option>
             <option value="21">21:00 UTC</option>
           </select>
-          <img id="iconTEMP">
+          <img id="iconTEMP" referrerpolicy="no-referrer">
         </div>
         <div class="model">
           <label for="gfsRunTEMP">GFS:</label>
@@ -123,7 +123,7 @@
             <option value="12">12:00 UTC</option>
             <option value="18" selected>18:00 UTC</option>
           </select>
-          <img id="gfsTEMP">
+          <img id="gfsTEMP" referrerpolicy="no-referrer">
         </div>
       </div>
       <hr>
@@ -148,7 +148,7 @@
             <option value="18">18:00 UTC</option>
             <option value="21">21:00 UTC</option>
           </select>
-          <img id="aromeWIND">
+          <img id="aromeWIND" referrerpolicy="no-referrer">
         </div>
         <div class="model">
           <label for="iconRunWIND">ICON-EU:</label>
@@ -162,7 +162,7 @@
             <option value="18">18:00 UTC</option>
             <option value="21">21:00 UTC</option>
           </select>
-          <img id="iconWIND" crossorigin="anonymous">
+          <img id="iconWIND" referrerpolicy="no-referrer">
         </div>
         <div class="model">
           <label for="gfsRunWIND">GFS:</label>
@@ -172,7 +172,7 @@
             <option value="12">12:00 UTC</option>
             <option value="18" selected>18:00 UTC</option>
           </select>
-          <img id="gfsWIND" crossorigin="anonymous">
+          <img id="gfsWIND" referrerpolicy="no-referrer">
         </div>
       </div>
       <hr>
@@ -271,8 +271,12 @@
         </select>
       </div>
       <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 40px;">
-        <iframe id="windyForecastFrame" width="650" height="187" src="https://embed.windy.com/embed.html?type=forecast&location=coordinates&detail=true&detailLat=41.3825802&detailLon=2.177073&metricTemp=°C&metricRain=mm&metricWind=km/h" frameborder="0"></iframe>
+        <iframe id="windyForecastFrame" width="1200" height="187" src="https://embed.windy.com/embed.html?type=forecast&location=coordinates&detail=true&detailLat=41.3825802&detailLon=2.177073&metricTemp=°C&metricRain=mm&metricWind=km/h" frameborder="0"></iframe>
       </div>
+      <br>
+      <iframe width="1200" height="900" src="https://charts.ecmwf.int/products/medium-mslp-rain?interval=6&projection=opencharts_south_west_europe"></iframe>
+      <br>
+      <br>
       <footer>Datos de Meteociel (Meteo-France) y Windy</footer>
     </div>
     <script>

@@ -64,37 +64,45 @@
     <hr>
     <div class="grid">
       <div class="model">
-        <p style="font-size: 15px;">SAT Visible (solo diurno)</p>
-        <img src="https://modeles20.meteociel.fr/satellite/animsatviscolmtgsp.gif">
+        <p style="font-size: 15px;">SAT España fijo</p>
+        <select id="satEspSelect">
+          <option value="vis">Visible</option>
+          <option value="anim_vis">Animación Visible</option>
+          <option value="ir">IR</option>
+          <option value="anim_ir">Animación IR</option>
+        </select>
+        <img id="satEspImg" referrerpolicy="no-referrer">
       </div>
       <div class="model">
-        <p style="font-size: 15px;">SAT IR</p>
-        <img src="https://modeles20.meteociel.fr/satellite/animsatirmtgsp.gif">
+        <p style="font-size: 15px;">SAT Europa fijo</p>
+        <select id="satEurSelect">
+          <option value="vis">Visible</option>
+          <option value="anim_vis">Animación Visible</option>
+          <option value="ir">IR</option>
+          <option value="anim_ir">Animación IR</option>
+        </select>
+        <img id="satEurImg" referrerpolicy="no-referrer">
       </div>
       <div class="model">
-        <p style="font-size: 15px;">SAT Visible+IR</p>
-        <img src="https://modeles20.meteociel.fr/satellite/animsatsandvisirmtgsp.gif">
-      </div>
-    </div>
-    <div class="grid">
-      <div class="model">
-        <p style="font-size: 15px;">SAT IR imágen fija</p>
-        <img src="https://img.allmetsat.com/sat/msg_fes-espana_portugal-ir039.jpg">
-      </div>
-      <div class="model">
-        <p style="font-size: 15px;">SAT IR Europa</p>
-        <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_CentralEurope.jpg">
-      </div>
-      <div class="model">
-        <p style="font-size: 15px;">SAT IR EU+AFR+Atlántico</p>
-        <img src="https://eumetview.eumetsat.int/static-images/latestImages/EUMETSAT_MSG_IR108Color_LowResolution.jpg">
+        <p style="font-size: 15px;">SAT Atlántico fijo</p>
+        <select id="satAtlSelect">
+          <option value="vis">Visible</option>
+          <option value="anim_vis">Animación Visible</option>
+          <option value="ir">IR</option>
+          <option value="anim_ir">Animación IR</option>
+        </select>
+        <img id="satAtlImg" referrerpolicy="no-referrer">
       </div>
     </div>
     <hr>
-    <div style="display: grid; grid-template-columns: 1fr; gap: 15px; padding: 20px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px;">
       <div class="model">
-        <p style="font-size: 15px;">Radar WINDY</p>
-        <iframe width="900" height="600" src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=6&overlay=radar&product=radar&level=surface&lat=40.187&lon=-3.563" frameborder="0"></iframe>
+        <p style="font-size: 15px;">Radar Windy</p>
+        <iframe src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=6&overlay=radar&product=radar&level=surface&lat=40.187&lon=-3.563" width="100%" height="700" style="border:none;"></iframe>
+      </div>
+      <div class="model">
+        <p style="font-size: 15px;">Rayos</p>
+        <iframe width="100%" height="700" src="https://maps.blitzortung.org/en/#4.99/39.79/-4.6" style="border:none;"></iframe>
       </div>
     </div>
     <hr>
@@ -110,7 +118,7 @@
         <p>UTC time: <span id="operaLabel"></span></p>
       </div>
     </div>
-    <footer>Datos de Meteociel (Meteo-France), EUMETSAT, AEMET, EUMETNET, WINDY</footer>
+    <footer>Datos de Meteociel (Meteo-France), AEMET, EUMETNET, Windy, Blitzortung</footer>
     <script>
       const selectorAcumulacion = document.getElementById("acumulacionHoras");
       const imagenAcumulacion = document.getElementById("mapaAcumulacion");
@@ -157,6 +165,56 @@
       operaSlider.addEventListener("input", actualizarImagenOpera);
       calcularUltimaImagen();
       actualizarImagenOpera();
+
+      const satEspSelect = document.getElementById("satEspSelect");
+      const satEurSelect = document.getElementById("satEurSelect");
+      const satAtlSelect = document.getElementById("satAtlSelect");
+      const satEspImg = document.getElementById("satEspImg");
+      const satEurImg = document.getElementById("satEurImg");
+      const satAtlImg = document.getElementById("satAtlImg");
+      const urlsSat = {
+        esp: {
+          vis: "https://modeles20.meteociel.fr/satellite/latestsatviscolmtgsp.png",
+          anim_vis: "https://modeles20.meteociel.fr/satellite/animsatviscolmtgsp.gif",
+          ir: "https://modeles20.meteociel.fr/satellite/latestsatirmtgsp.png",
+          anim_ir: "https://modeles20.meteociel.fr/satellite/animsatirmtgsp.gif"
+        },
+        eur: {
+          vis: "https://modeles20.meteociel.fr/satellite/latestsatviscolmtgeu.png",
+          anim_vis: "https://modeles20.meteociel.fr/satellite/animsatviscolmtgeu.gif",
+          ir: "https://modeles20.meteociel.fr/satellite/latestsatirmtgeu.png",
+          anim_ir: "https://modeles20.meteociel.fr/satellite/animsatirmtgeu.gif"
+        },
+        atl: {
+          vis: "https://modeles20.meteociel.fr/satellite/latestsatviscolmtgalt.png",
+          anim_vis: "https://modeles20.meteociel.fr/satellite/animsatviscolmtgalt.gif",
+          ir: "https://modeles20.meteociel.fr/satellite/latestsatirmtgalt.png",
+          anim_ir: "https://modeles20.meteociel.fr/satellite/animsatirmtgalt.gif"
+        }
+      };
+      function actualizarSat() {
+        satEspImg.src = urlsSat.esp[satEspSelect.value];
+        satEurImg.src = urlsSat.eur[satEurSelect.value];
+        satAtlImg.src = urlsSat.atl[satAtlSelect.value];
+      }
+      function establecerDefectoSat() {
+        let ahora = new Date();
+        let hora = ahora.getHours();
+        let minutos = ahora.getMinutes();
+        let valorDefecto = "ir";
+        if ((hora > 9 || (hora === 9 && minutos >= 0)) && (hora < 19 || (hora === 19 && minutos === 0))) {
+          valorDefecto = "vis";
+        }
+        satEspSelect.value = valorDefecto;
+        satEurSelect.value = valorDefecto;
+        satAtlSelect.value = valorDefecto;
+      }
+      satEspSelect.addEventListener("change", actualizarSat);
+      satEurSelect.addEventListener("change", actualizarSat);
+      satAtlSelect.addEventListener("change", actualizarSat);
+      establecerDefectoSat();
+      actualizarSat();
+
     </script>
   </body>
 </html>

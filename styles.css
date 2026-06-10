@@ -108,6 +108,26 @@ button:hover {
     padding: 15px;
 }
 
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-2 {
+        padding: 8px;
+    }
+}
+
 .model {
     background: #1b1f27;
     border-radius: 8px;
@@ -126,6 +146,40 @@ button:hover {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.model iframe {
+    width: 100%;
+    display: block;
+}
+
+/* Styles specific to AEMET model/iframe only */
+.model.aemet {
+    display: flex;
+    flex-direction: column;
+}
+
+.model.aemet p {
+    margin: 10px 0;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.model.aemet iframe.aemet-iframe {
+    width: 100%;
+    border: none;
+    flex: 1; /* fill available height in desktop/tablet */
+    height: auto;
+    min-height: 0;
+}
+
+/* Mobile: force AEMET iframe to 700px height only on small screens */
+@media (max-width: 769px) {
+    .model.aemet iframe.aemet-iframe {
+        height: 700px;
+        min-height: 700px;
+        flex: none;
+    }
 }
 
 .model-title {

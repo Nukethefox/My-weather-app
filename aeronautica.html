@@ -5,6 +5,16 @@
     <title>Meteorología aeronáutica</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @media (max-width: 1024px) {
+        .simbolos-image {
+          width: auto !important;
+          max-width: 30%;
+          display: block;
+          margin: 10px auto 0 auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -78,7 +88,7 @@
       <img id="vedurImage" src="https://www.vedur.is/photos/flugkort/PGDE14_EGRR_0000.png" style="width:90%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
       <br>
       <h3>Leyenda:</h3>
-      <img src="simbolos.png" style="width:15%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
+      <img class="simbolos-image" src="simbolos.png" style="width:15%; height:auto; margin-top:10px; border-radius:8px; display:block; margin:10px auto 0 auto;">
       <br>
       <p>Jet Stream: Triangulo = 50 kts | Linea larga = 10 kts | Linea corta = 5 kts</p>
       <p>Abreviaturas: ISOL = Isolated (CB aislados) | OCNL = Occasional (CB ocasionales) | FRQ = Frequent (frecuentes) | EMBD = Embedded (CB dentro de otras nubes)</p>

@@ -95,7 +95,7 @@
       </div>
     </div>
     <hr>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px;">
+    <div class="grid-2">
       <div class="model">
         <p style="font-size: 15px;">Radar Windy</p>
         <iframe src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=mm&metricTemp=°C&metricWind=km/h&zoom=6&overlay=radar&product=radar&level=surface&lat=40.187&lon=-3.563" width="100%" height="700" style="border:none;"></iframe>
@@ -106,10 +106,10 @@
       </div>
     </div>
     <hr>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px;">
-      <div class="model">
+    <div class="grid-2">
+      <div class="model aemet">
         <p style="font-size: 15px;">Radar AEMET</p>
-        <iframe src="https://www.aemet.es/es/eltiempo/observacion/radar" width="100%" height="90%" style="border:none;"></iframe>
+        <iframe class="aemet-iframe" src="https://www.aemet.es/es/eltiempo/observacion/radar" width="100%" style="border:none;"></iframe>
       </div>
       <div class="model">
         <p style="font-size: 15px;">Radar EUMETSAT OPERA</p>
@@ -202,12 +202,46 @@
         let hora = ahora.getHours();
         let minutos = ahora.getMinutes();
         let valorDefecto = "ir";
-        if ((hora > 9 || (hora === 9 && minutos >= 0)) && (hora < 19 || (hora === 19 && minutos === 0))) {
+        if (esPeriodoDiurno(ahora, hora, minutos)) {
           valorDefecto = "vis";
         }
         satEspSelect.value = valorDefecto;
         satEurSelect.value = valorDefecto;
         satAtlSelect.value = valorDefecto;
+      }
+
+      function esPeriodoDiurno(fecha, hora, minutos) {
+        let claveFecha = fecha.getMonth() * 100 + fecha.getDate();
+        let minutosDelDia = hora * 60 + minutos;
+        let inicio;
+        let fin;
+
+        if (claveFecha >= 0 * 100 + 1 && claveFecha <= 1 * 100 + 15) {
+          inicio = 9 * 60 + 10;
+          fin = 17 * 60 + 30;
+        } else if (claveFecha >= 1 * 100 + 16 && claveFecha <= 2 * 100 + 15) {
+          inicio = 8 * 60 + 30;
+          fin = 18 * 60 + 30;
+        } else if (claveFecha >= 2 * 100 + 16 && claveFecha <= 4 * 100 + 1) {
+          inicio = 8 * 60 + 30;
+          fin = 19 * 60;
+        } else if (claveFecha >= 4 * 100 + 2 && claveFecha <= 7 * 100 + 1) {
+          inicio = 7 * 60 + 30;
+          fin = 20 * 60 + 45;
+        } else if (claveFecha >= 7 * 100 + 2 && claveFecha <= 9 * 100 + 1) {
+          inicio = 8 * 60 + 30;
+          fin = 19 * 60 + 30;
+        } else if (claveFecha >= 9 * 100 + 2 && claveFecha <= 10 * 100 + 1) {
+          inicio = 9 * 60;
+          fin = 17 * 60 + 45;
+        } else if (claveFecha >= 10 * 100 + 2 && claveFecha <= 11 * 100 + 31) {
+          inicio = 9 * 60 + 10;
+          fin = 17 * 60 + 20;
+        } else {
+          return false;
+        }
+
+        return minutosDelDia >= inicio && minutosDelDia <= fin;
       }
       satEspSelect.addEventListener("change", actualizarSat);
       satEurSelect.addEventListener("change", actualizarSat);

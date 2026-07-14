@@ -15,168 +15,8 @@
         <a href="aeronautica.html">Meteorología aeronáutica</a>
       </nav>
     </header>
-    <h3>Generación de los modelos</h3>
-    <div style="text-align: center;">
-      <p>Para cada modelo, necesitas seleccionar la <b>hora en la que se ha generado</b>. <br>Por ejemplo, si son las 9:00, puedes seleccionar el de las 0:00, o el de las 3:00 si aplica (el de las 6:00 probablemente aún no haya terminado de procesarse). <br>Si seleccionas una hora en el futuro, verás el modelo del día anterior. </p>
-      <label for="globalRun" style="font-size: 18px;">Selecciona para todos los modelos a la vez:</label>
-      <select id="globalRun">
-        <option value="">—</option>
-        <option value="00">00:00 UTC</option>
-        <option value="06">06:00 UTC</option>
-        <option value="12">12:00 UTC</option>
-        <option value="18">18:00 UTC</option>
-      </select>
-    </div>
-    <br>
-    <br>
-    <hr>
-    <h3>Precipitación</h3>
-    <div class="controls">
-      <p>Tiempo desde ahora: <span id="hourLabel">1</span>
-      </p>
-      <input type="range" min="1" max="51" value="1" id="hourSlider">
-      <br>
-      <br>
-    </div>
-    <div class="grid">
-      <div class="model">
-        <label for="aromeRun">AROME HD:</label>
-        <select id="aromeRun">
-          <option value="00">00:00 UTC</option>
-          <option value="03">03:00 UTC</option>
-          <option value="06">06:00 UTC</option>
-          <option value="09" selected>09:00 UTC</option>
-          <option value="12">12:00 UTC</option>
-          <option value="15">15:00 UTC</option>
-          <option value="18">18:00 UTC</option>
-          <option value="21">21:00 UTC</option>
-        </select>
-        <img id="arome" referrerpolicy="no-referrer">
-      </div>
-      <div class="model">
-        <label for="iconRun">ICON-EU:</label>
-        <select id="iconRun">
-          <option value="00">00:00 UTC</option>
-          <option value="03">03:00 UTC</option>
-          <option value="06">06:00 UTC</option>
-          <option value="09">09:00 UTC</option>
-          <option value="12" selected>12:00 UTC</option>
-          <option value="15">15:00 UTC</option>
-          <option value="18">18:00 UTC</option>
-          <option value="21">21:00 UTC</option>
-        </select>
-        <img id="icon" referrerpolicy="no-referrer">
-      </div>
-      <div class="model">
-        <label for="gfsRun">GFS:</label>
-        <select id="gfsRun">
-          <option value="00">00:00 UTC</option>
-          <option value="06">06:00 UTC</option>
-          <option value="12" selected>12:00 UTC</option>
-          <option value="18">18:00 UTC</option>
-        </select>
-        <img id="gfs" referrerpolicy="no-referrer">
-      </div>
-    </div>
-    <hr>
-    <h3>Temperatura</h3>
-    <div class="controlsTEMP">
-      <p>Tiempo desde ahora: <span id="hourLabelTEMP">1</span>
-      </p>
-      <input type="range" min="1" max="51" value="1" id="hourSliderTEMP">
-      <br>
-      <br>
-      <div class="grid">
-        <div class="model">
-          <label for="aromeRunTEMP">AROME HD:</label>
-          <select id="aromeRunTEMP">
-            <option value="00">00:00 UTC</option>
-            <option value="03">03:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="09" selected>09:00 UTC</option>
-            <option value="12">12:00 UTC</option>
-            <option value="15">15:00 UTC</option>
-            <option value="18">18:00 UTC</option>
-            <option value="21">21:00 UTC</option>
-          </select>
-          <img id="aromeTEMP" referrerpolicy="no-referrer">
-        </div>
-        <div class="model">
-          <label for="iconRunTEMP">ICON-EU:</label>
-          <select id="iconRunTEMP">
-            <option value="00">00:00 UTC</option>
-            <option value="03">03:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="09">09:00 UTC</option>
-            <option value="12" selected>12:00 UTC</option>
-            <option value="15">15:00 UTC</option>
-            <option value="18">18:00 UTC</option>
-            <option value="21">21:00 UTC</option>
-          </select>
-          <img id="iconTEMP" referrerpolicy="no-referrer">
-        </div>
-        <div class="model">
-          <label for="gfsRunTEMP">GFS:</label>
-          <select id="gfsRunTEMP">
-            <option value="00">00:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="12">12:00 UTC</option>
-            <option value="18" selected>18:00 UTC</option>
-          </select>
-          <img id="gfsTEMP" referrerpolicy="no-referrer">
-        </div>
-      </div>
-      <hr>
-      <h3>Viento máximo</h3>
-      <div class="controlsWIND">
-        <p>Tiempo desde ahora: <span id="hourLabelWIND">1</span>
-        </p>
-        <input type="range" min="1" max="51" value="1" id="hourSliderWIND">
-        <br>
-        <br>
-      </div>
-      <div class="grid">
-        <div class="model">
-          <label for="aromeRunWIND">AROME HD:</label>
-          <select id="aromeRunWIND">
-            <option value="00">00:00 UTC</option>
-            <option value="03">03:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="09" selected>09:00 UTC</option>
-            <option value="12">12:00 UTC</option>
-            <option value="15">15:00 UTC</option>
-            <option value="18">18:00 UTC</option>
-            <option value="21">21:00 UTC</option>
-          </select>
-          <img id="aromeWIND" referrerpolicy="no-referrer">
-        </div>
-        <div class="model">
-          <label for="iconRunWIND">ICON-EU:</label>
-          <select id="iconRunWIND">
-            <option value="00">00:00 UTC</option>
-            <option value="03">03:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="09">09:00 UTC</option>
-            <option value="12" selected>12:00 UTC</option>
-            <option value="15">15:00 UTC</option>
-            <option value="18">18:00 UTC</option>
-            <option value="21">21:00 UTC</option>
-          </select>
-          <img id="iconWIND" referrerpolicy="no-referrer">
-        </div>
-        <div class="model">
-          <label for="gfsRunWIND">GFS:</label>
-          <select id="gfsRunWIND">
-            <option value="00">00:00 UTC</option>
-            <option value="06">06:00 UTC</option>
-            <option value="12">12:00 UTC</option>
-            <option value="18" selected>18:00 UTC</option>
-          </select>
-          <img id="gfsWIND" referrerpolicy="no-referrer">
-        </div>
-      </div>
-      <hr>
-      <h3>Predicción modelo ECMWF</h3>
+    <h2 style="text-align: center;">Meteograma ECMWF</h2>
+    <p style="text-align: center;">Este es el modelo Europeo, suele tener la mayor resolución y precisión matemática.</p>
       <div style="text-align: center; margin-bottom: 20px;">
         <label for="citySelector" style="font-size: 18px;">Selecciona tu ciudad más cercana:</label>
         <select id="citySelector" style="font-size: 16px; padding: 5px;">
@@ -273,9 +113,222 @@
       <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-bottom: 40px;">
         <iframe id="windyForecastFrame" width="1200" height="187" src="https://embed.windy.com/embed.html?type=forecast&location=coordinates&detail=true&detailLat=41.3825802&detailLon=2.177073&metricTemp=°C&metricRain=mm&metricWind=km/h" frameborder="0"></iframe>
       </div>
+      <hr>
+    <h2 style="text-align: center;">Comparación de mapas AROME HD, ICON-EU, ECMWF</h2>
+    <div style="text-align: center;">
+      <p>- AROME HD: Modelo mesoescalar, con una resolución altísima, diseñado para precisión local y detalle a corto plazo.<br>- ICON-EU: Un intermedio entre AROME HD y ECMWF, pero con menor precisión en terrenos abruptos.</p><br>
+      <p>Para cada modelo, necesitas seleccionar la <b>hora en la que se ha generado</b>. <br>Por ejemplo, si son las 9:00, puedes seleccionar el de las 0:00, o el de las 3:00 si existe (el de las 6:00 probablemente aún no haya terminado de procesarse). <br><br>Si seleccionas una hora futura, verás el modelo del día anterior.<br>Si una imagen no carga, prueba a seleccionar una hora diferente.</p>
+      <label for="globalRun" style="font-size: 18px;">Selecciona para todos los modelos a la vez:</label>
+      <select id="globalRun">
+        <option value="">—</option>
+        <option value="00">00:00 UTC</option>
+        <option value="06">06:00 UTC</option>
+        <option value="12">12:00 UTC</option>
+        <option value="18">18:00 UTC</option>
+      </select>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <h3>Precipitación</h3>
+    <div class="controls">
+      <p>Tiempo desde ahora: <span id="hourLabel">1</span>
+      </p>
+      <input type="range" min="1" max="240" value="1" id="hourSlider">
       <br>
-      <iframe width="1200" height="900" src="https://charts.ecmwf.int/products/medium-mslp-rain?interval=6&projection=opencharts_south_west_europe"></iframe>
       <br>
+    </div>
+    <div class="grid">
+      <div class="model">
+        <label for="aromeRun">AROME HD:</label>
+        <select id="aromeRun">
+          <option value="00">00:00 UTC</option>
+          <option value="03">03:00 UTC</option>
+          <option value="06">06:00 UTC</option>
+          <option value="09" selected>09:00 UTC</option>
+          <option value="12">12:00 UTC</option>
+          <option value="15">15:00 UTC</option>
+          <option value="18">18:00 UTC</option>
+          <option value="21">21:00 UTC</option>
+        </select>
+        <img id="arome" referrerpolicy="no-referrer">
+      </div>
+      <div class="model">
+        <label for="iconRun">ICON-EU:</label>
+        <select id="iconRun">
+          <option value="00">00:00 UTC</option>
+          <option value="03">03:00 UTC</option>
+          <option value="06">06:00 UTC</option>
+          <option value="09">09:00 UTC</option>
+          <option value="12" selected>12:00 UTC</option>
+          <option value="15">15:00 UTC</option>
+          <option value="18">18:00 UTC</option>
+          <option value="21">21:00 UTC</option>
+        </select>
+        <img id="icon" referrerpolicy="no-referrer">
+      </div>
+      <div class="model">
+        <label for="ecmwfRun">ECMWF:</label>
+        <select id="ecmwfRun">
+          <option value="00">00:00 UTC</option>
+          <option value="12" selected>12:00 UTC</option>
+        </select>
+        <img id="ecmwf" referrerpolicy="no-referrer">
+      </div>
+    </div>
+    <hr>
+      <h3>Precipitación Europa</h3>
+      <div class="controls">
+        <p>Tiempo desde ahora: <span id="hourLabelPRECEUR">1</span>
+        </p>
+        <input type="range" min="1" max="240" value="1" id="hourSliderPRECEUR">
+        <br>
+        <br>
+      </div>
+      <div class="grid-2">
+        <div class="model">
+          <label for="gfsRunPRECEUR">GFS Europe:</label>
+          <select id="gfsRunPRECEUR">
+            <option value="00">00:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+          </select>
+          <img id="gfsPRECEUR" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="ecmwfRunPRECEUR">ECMWF:</label>
+          <select id="ecmwfRunPRECEUR">
+            <option value="00">00:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+          </select>
+          <img id="ecmwfPRECEUR" referrerpolicy="no-referrer">
+        </div>
+      </div>
+    <hr>
+    <h3>Temperatura a 2 metros</h3>
+    <div class="controlsTEMP">
+      <p>Tiempo desde ahora: <span id="hourLabelTEMP">1</span>
+      </p>
+      <input type="range" min="1" max="240" value="1" id="hourSliderTEMP">
+      <br>
+      <br>
+      <div class="grid">
+        <div class="model">
+          <label for="aromeRunTEMP">AROME HD:</label>
+          <select id="aromeRunTEMP">
+            <option value="00">00:00 UTC</option>
+            <option value="03">03:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="09" selected>09:00 UTC</option>
+            <option value="12">12:00 UTC</option>
+            <option value="15">15:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+            <option value="21">21:00 UTC</option>
+          </select>
+          <img id="aromeTEMP" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="iconRunTEMP">ICON-EU:</label>
+          <select id="iconRunTEMP">
+            <option value="00">00:00 UTC</option>
+            <option value="03">03:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="09">09:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+            <option value="15">15:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+            <option value="21">21:00 UTC</option>
+          </select>
+          <img id="iconTEMP" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="ecmwfRunTEMP">ECMWF:</label>
+          <select id="ecmwfRunTEMP">
+            <option value="00">00:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+          </select>
+          <img id="ecmwfTEMP" referrerpolicy="no-referrer">
+        </div>
+      </div>
+      <hr>
+      <h3>Temperatura 850hPa (1500m)</h3>
+      <div class="controlsTEMP">
+        <p>Tiempo desde ahora: <span id="hourLabelT850">1</span>
+        </p>
+        <input type="range" min="1" max="240" value="1" id="hourSliderT850">
+        <br>
+        <br>
+      </div>
+      <div class="grid-2">
+        <div class="model">
+          <label for="gfsRunT850">GFS Europe:</label>
+          <select id="gfsRunT850">
+            <option value="00">00:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+          </select>
+          <img id="gfsT850" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="ecmwfRunT850">ECMWF:</label>
+          <select id="ecmwfRunT850">
+            <option value="00">00:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+          </select>
+          <img id="ecmwfT850" referrerpolicy="no-referrer">
+        </div>
+      </div>
+      <hr>
+      <h3>Rachas viento</h3>
+      <div class="controlsWIND">
+        <p>Tiempo desde ahora: <span id="hourLabelWIND">1</span>
+        </p>
+        <input type="range" min="1" max="240" value="1" id="hourSliderWIND">
+        <br>
+        <br>
+      </div>
+      <div class="grid">
+        <div class="model">
+          <label for="aromeRunWIND">AROME HD:</label>
+          <select id="aromeRunWIND">
+            <option value="00">00:00 UTC</option>
+            <option value="03">03:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="09" selected>09:00 UTC</option>
+            <option value="12">12:00 UTC</option>
+            <option value="15">15:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+            <option value="21">21:00 UTC</option>
+          </select>
+          <img id="aromeWIND" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="iconRunWIND">ICON-EU:</label>
+          <select id="iconRunWIND">
+            <option value="00">00:00 UTC</option>
+            <option value="03">03:00 UTC</option>
+            <option value="06">06:00 UTC</option>
+            <option value="09">09:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+            <option value="15">15:00 UTC</option>
+            <option value="18">18:00 UTC</option>
+            <option value="21">21:00 UTC</option>
+          </select>
+          <img id="iconWIND" referrerpolicy="no-referrer">
+        </div>
+        <div class="model">
+          <label for="ecmwfRunWIND">ECMWF:</label>
+          <select id="ecmwfRunWIND">
+            <option value="00">00:00 UTC</option>
+            <option value="12" selected>12:00 UTC</option>
+          </select>
+          <img id="ecmwfWIND" referrerpolicy="no-referrer">
+        </div>
+      </div>
+      <hr>
+      
       <br>
       <footer>Datos de Meteociel (Meteo-France) y Windy</footer>
     </div>
@@ -290,6 +343,7 @@
         "18": "arome_sp1",
         "21": "arome21z_sp1"
       };
+
       document.getElementById("globalRun").addEventListener("change", function() {
         let run = this.value;
         if (!run) return;
@@ -302,6 +356,7 @@
           }
         });
       });
+
       function getRunString(runHour) {
         let now = new Date();
         let currentUTC = now.getUTCHours();
@@ -314,6 +369,7 @@
         let day = String(runDate.getUTCDate()).padStart(2, "0");
         return `${year}${month}${day}${runHour}`;
       }
+
       function parseRunTime(run) {
         let year = parseInt(run.slice(0, 4));
         let month = parseInt(run.slice(4, 6)) - 1;
@@ -321,35 +377,213 @@
         let hour = parseInt(run.slice(8, 10));
         return new Date(Date.UTC(year, month, day, hour));
       }
+      function calculateEcmwfHour(validTime, runDate) {
+        let diffHours = Math.round((validTime - runDate) / 3600000);
+        if (diffHours < 1) diffHours = 1;
+        
+        if (diffHours <= 90) {
+          return diffHours;
+        } else if (diffHours <= 144) {
+          let base = diffHours - 90;
+          let steps = Math.round(base / 3);
+          return 90 + (steps * 3);
+        } else {
+          let base = diffHours - 144;
+          let steps = Math.round(base / 6);
+          return 144 + (steps * 6);
+        }
+      }
+      function calculateGlobalModelHour(validTime, runDate, interval = 3) {
+        let diffHours = Math.round((validTime - runDate) / 3600000);
+        if (diffHours < 1) diffHours = 1;
+        let steps = Math.round(diffHours / interval);
+        return Math.max(1, steps * interval);
+      }
       let slider = document.getElementById("hourSlider");
       let aromeRunSelector = document.getElementById("aromeRun");
-      let gfsRunSelector = document.getElementById("gfsRun");
+      let ecmwfRunSelector = document.getElementById("ecmwfRun");
       let iconRunSelector = document.getElementById("iconRun");
+
       function updateImages() {
         let selectedRun = aromeRunSelector.value;
         let aromePrefix = aromePrefixes[selectedRun];
         let hourOffset = parseInt(slider.value);
         let now = new Date();
         let validTime = new Date(now.getTime() + hourOffset * 3600000);
+        
         document.getElementById("hourLabel").innerText = "+" + hourOffset + "h";
+        
         let runAROME = getRunString(aromeRunSelector.value);
-        let runGFS = getRunString(gfsRunSelector.value);
+        let runECMWF = getRunString(ecmwfRunSelector.value);
         let runICON = getRunString(iconRunSelector.value);
+        
         let runAROMEDate = parseRunTime(runAROME);
-        let runGFSDate = parseRunTime(runGFS);
+        let runECMWFDate = parseRunTime(runECMWF);
         let runICONDate = parseRunTime(runICON);
+        
         let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
-        let rawGfsHour = Math.round((validTime - runGFSDate) / 3600000);
-        let gfsHour = Math.round(rawGfsHour / 3) * 3;
-        if (gfsHour < 3) gfsHour = 3;
         let iconHour = Math.round((validTime - runICONDate) / 3600000);
+        let ecmwfHour = calculateEcmwfHour(validTime, runECMWFDate);
+
         let aromeURL = `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-1-${aromeHour}-0.png`;
-        let gfsURL = `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-779SP.GIF`;
+        let ecmwfURL = `https://modeles3.meteociel.fr/modeles/ecmwf2/runs/${runECMWF}/ecmwfsp-2-${ecmwfHour}.png`;
         let iconURL = `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-1-${iconHour}-0.png`;
+        
         document.getElementById("arome").src = aromeURL;
-        document.getElementById("gfs").src = gfsURL;
+        document.getElementById("ecmwf").src = ecmwfURL;
         document.getElementById("icon").src = iconURL;
       }
+
+      slider.addEventListener("input", updateImages);
+      aromeRunSelector.addEventListener("change", updateImages);
+      ecmwfRunSelector.addEventListener("change", updateImages);
+      iconRunSelector.addEventListener("change", updateImages);
+
+      let sliderPRECEUR = document.getElementById("hourSliderPRECEUR");
+      let gfsRunSelectorPRECEUR = document.getElementById("gfsRunPRECEUR");
+      let ecmwfRunSelectorPRECEUR = document.getElementById("ecmwfRunPRECEUR");
+
+      function updateImagesPRECEUR() {
+        let hourOffset = parseInt(sliderPRECEUR.value);
+        let now = new Date();
+        let validTime = new Date(now.getTime() + hourOffset * 3600000);
+        
+        document.getElementById("hourLabelPRECEUR").innerText = "+" + hourOffset + "h";
+        
+        let runGFS = getRunString(gfsRunSelectorPRECEUR.value);
+        let runECMWF = getRunString(ecmwfRunSelectorPRECEUR.value);
+        
+        let runGFSDate = parseRunTime(runGFS);
+        let runECMWFDate = parseRunTime(runECMWF);
+        
+        let gfsHour = calculateGlobalModelHour(validTime, runGFSDate, 3);
+        let ecmwfHour = calculateGlobalModelHour(validTime, runECMWFDate, 3);
+
+        let gfsURL = `https://modeles16.meteociel.fr/modeles/gfs/runs/${runGFS}/gfs-2-${gfsHour}.png`;
+        let ecmwfURL = `https://modeles3.meteociel.fr/modeles/ecmwf/runs/${runECMWF}/ecmwf-2-${ecmwfHour}.png`;
+        
+        document.getElementById("gfsPRECEUR").src = gfsURL;
+        document.getElementById("ecmwfPRECEUR").src = ecmwfURL;
+      }
+
+      sliderPRECEUR.addEventListener("input", updateImagesPRECEUR);
+      gfsRunSelectorPRECEUR.addEventListener("change", updateImagesPRECEUR);
+      ecmwfRunSelectorPRECEUR.addEventListener("change", updateImagesPRECEUR);
+
+
+      let sliderTEMP = document.getElementById("hourSliderTEMP");
+      let aromeRunSelectorTEMP = document.getElementById("aromeRunTEMP");
+      let ecmwfRunSelectorTEMP = document.getElementById("ecmwfRunTEMP");
+      let iconRunSelectorTEMP = document.getElementById("iconRunTEMP");
+
+      function updateImagesTEMP() {
+        let selectedRun = aromeRunSelectorTEMP.value;
+        let aromePrefix = aromePrefixes[selectedRun];
+        let hourOffset = parseInt(sliderTEMP.value);
+        let now = new Date();
+        let validTime = new Date(now.getTime() + hourOffset * 3600000);
+        
+        document.getElementById("hourLabelTEMP").innerText = "+" + hourOffset + "h";
+        
+        let runAROME = getRunString(aromeRunSelectorTEMP.value);
+        let runECMWF = getRunString(ecmwfRunSelectorTEMP.value);
+        let runICON = getRunString(iconRunSelectorTEMP.value);
+        
+        let runAROMEDate = parseRunTime(runAROME);
+        let runECMWFDate = parseRunTime(runECMWF);
+        let runICONDate = parseRunTime(runICON);
+        
+        let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
+        let iconHour = Math.round((validTime - runICONDate) / 3600000);
+        let ecmwfHour = calculateEcmwfHour(validTime, runECMWFDate);
+
+        let aromeURL = `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-0-${aromeHour}-0.png`;
+        let ecmwfURL = `https://modeles3.meteociel.fr/modeles/ecmwf2/runs/${runECMWF}/ecmwfsp-19-${ecmwfHour}.png`;
+        let iconURL = `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-0-${iconHour}-0.png`;
+        
+        document.getElementById("aromeTEMP").src = aromeURL;
+        document.getElementById("ecmwfTEMP").src = ecmwfURL;
+        document.getElementById("iconTEMP").src = iconURL;
+      }
+
+      sliderTEMP.addEventListener("input", updateImagesTEMP);
+      aromeRunSelectorTEMP.addEventListener("change", updateImagesTEMP);
+      ecmwfRunSelectorTEMP.addEventListener("change", updateImagesTEMP);
+      iconRunSelectorTEMP.addEventListener("change", updateImagesTEMP);
+
+      let sliderT850 = document.getElementById("hourSliderT850");
+      let gfsRunSelectorT850 = document.getElementById("gfsRunT850");
+      let ecmwfRunSelectorT850 = document.getElementById("ecmwfRunT850");
+
+      function updateImagesT850() {
+        let hourOffset = parseInt(sliderT850.value);
+        let now = new Date();
+        let validTime = new Date(now.getTime() + hourOffset * 3600000);
+        
+        document.getElementById("hourLabelT850").innerText = "+" + hourOffset + "h";
+        
+        let runGFS = getRunString(gfsRunSelectorT850.value);
+        let runECMWF = getRunString(ecmwfRunSelectorT850.value);
+        
+        let runGFSDate = parseRunTime(runGFS);
+        let runECMWFDate = parseRunTime(runECMWF);
+        
+        let gfsHour = calculateGlobalModelHour(validTime, runGFSDate, 3);
+        let ecmwfHour = calculateGlobalModelHour(validTime, runECMWFDate, 3);
+
+        let gfsURL = `https://modeles16.meteociel.fr/modeles/gfs/runs/${runGFS}/gfs-1-${gfsHour}.png`;
+        let ecmwfURL = `https://modeles3.meteociel.fr/modeles/ecmwf/runs/${runECMWF}/ecmwf-1-${ecmwfHour}.png`;
+        
+        document.getElementById("gfsT850").src = gfsURL;
+        document.getElementById("ecmwfT850").src = ecmwfURL;
+      }
+
+      sliderT850.addEventListener("input", updateImagesT850);
+      gfsRunSelectorT850.addEventListener("change", updateImagesT850);
+      ecmwfRunSelectorT850.addEventListener("change", updateImagesT850);
+
+
+      let sliderWIND = document.getElementById("hourSliderWIND");
+      let aromeRunSelectorWIND = document.getElementById("aromeRunWIND");
+      let ecmwfRunSelectorWIND = document.getElementById("ecmwfRunWIND");
+      let iconRunSelectorWIND = document.getElementById("iconRunWIND");
+
+      function updateImagesWIND() {
+        let selectedRun = aromeRunSelectorWIND.value;
+        let aromePrefix = aromePrefixes[selectedRun];
+        let hourOffset = parseInt(sliderWIND.value);
+        let now = new Date();
+        let validTime = new Date(now.getTime() + hourOffset * 3600000);
+        
+        document.getElementById("hourLabelWIND").innerText = "+" + hourOffset + "h";
+        
+        let runAROME = getRunString(aromeRunSelectorWIND.value);
+        let runECMWF = getRunString(ecmwfRunSelectorWIND.value);
+        let runICON = getRunString(iconRunSelectorWIND.value);
+        
+        let runAROMEDate = parseRunTime(runAROME);
+        let runECMWFDate = parseRunTime(runECMWF);
+        let runICONDate = parseRunTime(runICON);
+        
+        let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
+        let iconHour = Math.round((validTime - runICONDate) / 3600000);
+        let ecmwfHour = calculateEcmwfHour(validTime, runECMWFDate);
+
+        let aromeURL = `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-11-${aromeHour}-0.png`;
+        let ecmwfURL = `https://modeles3.meteociel.fr/modeles/ecmwf2/runs/${runECMWF}/ecmwfsp-27-${ecmwfHour}.png`;
+        let iconURL = `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-11-${iconHour}-0.png`;
+        
+        document.getElementById("aromeWIND").src = aromeURL;
+        document.getElementById("ecmwfWIND").src = ecmwfURL;
+        document.getElementById("iconWIND").src = iconURL;
+      }
+
+      sliderWIND.addEventListener("input", updateImagesWIND);
+      aromeRunSelectorWIND.addEventListener("change", updateImagesWIND);
+      ecmwfRunSelectorWIND.addEventListener("change", updateImagesWIND);
+      iconRunSelectorWIND.addEventListener("change", updateImagesWIND);
+
+
       let currentUTC = new Date().getUTCHours();
       let defaultRun;
       if (currentUTC >= 3 && currentUTC < 9) {
@@ -361,15 +595,25 @@
       } else {
         defaultRun = "18";
       }
+
       let selectorsToInit = [
-        "aromeRun", "iconRun", "gfsRun",
-        "aromeRunTEMP", "iconRunTEMP", "gfsRunTEMP",
-        "aromeRunWIND", "iconRunWIND", "gfsRunWIND"
+        "aromeRun", "iconRun",
+        "aromeRunTEMP", "iconRunTEMP",
+        "aromeRunWIND", "iconRunWIND",
+        "gfsRunPRECEUR", "gfsRunT850" 
       ];
       selectorsToInit.forEach(id => {
         let element = document.getElementById(id);
         if (element) element.value = defaultRun;
       });
+
+      let ecmwfDefault = (defaultRun === "00" || defaultRun === "06") ? "00" : "12";
+      document.getElementById("ecmwfRun").value = ecmwfDefault;
+      document.getElementById("ecmwfRunTEMP").value = ecmwfDefault;
+      document.getElementById("ecmwfRunWIND").value = ecmwfDefault;
+      document.getElementById("ecmwfRunPRECEUR").value = ecmwfDefault;
+      document.getElementById("ecmwfRunT850").value = ecmwfDefault;
+
       let citySelector = document.getElementById("citySelector");
       let windyForecastFrame = document.getElementById("windyForecastFrame");
       citySelector.addEventListener("change", function() {
@@ -378,86 +622,11 @@
         let longitude = coordinates[1];
         windyForecastFrame.src = `https://embed.windy.com/embed.html?type=forecast&location=coordinates&detail=true&detailLat=${latitude}&detailLon=${longitude}&metricTemp=°C&metricRain=mm&metricWind=km/h`;
       });
-      slider.addEventListener("input", updateImages);
-      aromeRunSelector.addEventListener("change", updateImages);
-      gfsRunSelector.addEventListener("change", updateImages);
-      iconRunSelector.addEventListener("change", updateImages);
+
       updateImages();
-      let sliderTEMP = document.getElementById("hourSliderTEMP");
-      function updateImagesTEMP() {
-        let hourOffset = parseInt(sliderTEMP.value);
-        document.getElementById("hourLabelTEMP").innerText = "+" + hourOffset + "h";
-        let now = new Date();
-        let validTime = new Date(now.getTime() + hourOffset * 3600000);
-        let gfsRun = document.getElementById("gfsRunTEMP").value;
-        let iconRun = document.getElementById("iconRunTEMP").value;
-        let aromeRun = document.getElementById("aromeRunTEMP").value;
-        let runGFS = getRunString(gfsRun);
-        let runICON = getRunString(iconRun);
-        let runAROME = getRunString(aromeRun);
-        let runGFSDate = parseRunTime(runGFS);
-        let runICONDate = parseRunTime(runICON);
-        let runAROMEDate = parseRunTime(runAROME);
-        let gfsHour = Math.round((validTime - runGFSDate) / 3600000);
-        let iconHour = Math.round((validTime - runICONDate) / 3600000);
-        let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
-        if (gfsHour < 3) {
-          gfsHour = 3;
-        }
-        gfsHour = Math.round(gfsHour / 3) * 3;
-        let aromePrefix = aromePrefixes[aromeRun];
-        let gfsURL =
-          `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-580SP.GIF`;
-        let iconURL =
-          `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-0-${iconHour}-0.png`;
-        let aromeURL =
-          `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-0-${aromeHour}-0.png`;
-        document.getElementById("gfsTEMP").src = gfsURL;
-        document.getElementById("iconTEMP").src = iconURL;
-        document.getElementById("aromeTEMP").src = aromeURL;
-      }
-      sliderTEMP.addEventListener("input", updateImagesTEMP);
-      document.getElementById("gfsRunTEMP").addEventListener("change", updateImagesTEMP);
-      document.getElementById("iconRunTEMP").addEventListener("change", updateImagesTEMP);
-      document.getElementById("aromeRunTEMP").addEventListener("change", updateImagesTEMP);
+      updateImagesPRECEUR();
       updateImagesTEMP();
-      let sliderWIND = document.getElementById("hourSliderWIND");
-      function updateImagesWIND() {
-        let hourOffset = parseInt(sliderWIND.value);
-        document.getElementById("hourLabelWIND").innerText = "+" + hourOffset + "h";
-        let now = new Date();
-        let validTime = new Date(now.getTime() + hourOffset * 3600000);
-        let aromeRun = document.getElementById("aromeRunWIND").value;
-        let gfsRun = document.getElementById("gfsRunWIND").value;
-        let iconRun = document.getElementById("iconRunWIND").value;
-        let runGFS = getRunString(gfsRun);
-        let runICON = getRunString(iconRun);
-        let runAROME = getRunString(aromeRun);
-        let runGFSDate = parseRunTime(runGFS);
-        let runICONDate = parseRunTime(runICON);
-        let runAROMEDate = parseRunTime(runAROME);
-        let gfsHour = Math.round((validTime - runGFSDate) / 3600000);
-        let iconHour = Math.round((validTime - runICONDate) / 3600000);
-        let aromeHour = Math.round((validTime - runAROMEDate) / 3600000);
-        let aromePrefix = aromePrefixes[aromeRun];
-        if (gfsHour < 3) {
-          gfsHour = 3;
-        }
-        gfsHour = Math.round(gfsHour / 3) * 3;
-        let gfsURL =
-          `https://modeles2.meteociel.fr/modeles_gfs/runs/${runGFS}/${gfsHour}-289SP.GIF`;
-        let iconURL =
-          `https://modeles12.meteociel.fr/modeles/icon/runs/${runICON}/iconeu_sp1-11-${iconHour}-0.png`;
-        let aromeURL =
-          `https://modeles7.meteociel.fr/modeles/${aromePrefix}/runs/${runAROME}/aromehd-11-${aromeHour}-0.png`;
-        document.getElementById("gfsWIND").src = gfsURL;
-        document.getElementById("iconWIND").src = iconURL;
-        document.getElementById("aromeWIND").src = aromeURL;
-      }
-      sliderWIND.addEventListener("input", updateImagesWIND);
-      document.getElementById("gfsRunWIND").addEventListener("change", updateImagesWIND);
-      document.getElementById("iconRunWIND").addEventListener("change", updateImagesWIND);
-      document.getElementById("aromeRunWIND").addEventListener("change", updateImagesWIND);
+      updateImagesT850();
       updateImagesWIND();
     </script>
   </body>

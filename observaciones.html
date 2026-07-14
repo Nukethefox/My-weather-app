@@ -15,52 +15,71 @@
         <a href="aeronautica.html">Meteorología aeronáutica</a>
       </nav>
     </header>
-    <div class="grid">
+    <div class="grid-2">
       <div class="model">
-        <p style="font-size: 15px;">Fenómenos meteorológicos</p>
+        <p style="font-size: 15px;">Observaciones generales</p>
         <img src="https://www.meteociel.fr/cartes_obs/temp2_sp_1h.png">
       </div>
       <div class="model">
-        <p style="font-size: 15px;">Temperatura</p>
+        <p style="font-size: 15px;">Temperatura actual</p>
         <img src="https://www.meteociel.fr/cartes_obs/temp_sp.png">
       </div>
+    </div>
+
+<div class="grid-2">
       <div class="model">
-        <p style="font-size: 15px;">Viento</p>
-        <img src="https://www.meteociel.fr/cartes_obs/vent_sp.png">
+        <label for="select1">Punto de rocio, humedad relativa</label>
+        <select id="select1">
+          <option value="https://www.meteociel.fr/cartes_obs/pointrosee_sp.png">Punto de rocío</option>
+          <option value="https://www.meteociel.fr/cartes_obs/humi_sp.png">Humedad relativa</option>
+        </select>
+        <img id="img1" src="">
+      </div>
+      <div class="model">
+        <label for="select2">Temperaturas MIN/MAX</label>
+        <select id="select2">
+          <option value="https://www.meteociel.fr/cartes_obs/tn_sp.png">Temp mínima</option>
+          <option value="https://www.meteociel.fr/cartes_obs/txint_sp.png">Temp máxima</option>
+        </select>
+        <img id="img2" src="">
       </div>
     </div>
-    <div class="grid">
+
+    <div class="grid-2">
       <div class="model">
-        <p>
-          <label for="acumulacionHoras">Acumulación de lluvia</label>
-          <select id="acumulacionHoras">
-            <option value="01">Última hora</option>
-            <option value="24">Últimas 24 horas</option>
-          </select>
-        </p>
-        <img id="mapaAcumulacion">
+        <label for="select3">Viento medio/rachas</label>
+        <select id="select3">
+          <option value="https://www.meteociel.fr/cartes_obs/vent_sp.png">Viento medio</option>
+          <option value="https://www.meteociel.fr/cartes_obs/rafales_sp.png">Rachas</option>
+        </select>
+        <img id="img3" src="">
       </div>
       <div class="model">
-        <p style="font-size: 15px;">Cobertura de nubes</p>
-        <img src="https://www.meteociel.fr/cartes_obs/nebu_sp.png">
-      </div>
-      <div class="model">
-        <p style="font-size: 15px;">Velocidad viento máxima</p>
-        <img src="https://www.meteociel.fr/cartes_obs/rafales_sp.png">
-      </div>
-    </div>
-    <div class="grid">
-      <div class="model">
-        <p style="font-size: 15px;">Presión</p>
-        <img src="https://www.meteociel.fr/cartes_obs/pression2_sp.png">
-      </div>
-      <div class="model">
-        <p style="font-size: 15px;">Humedad</p>
-        <img src="https://www.meteociel.fr/cartes_obs/humi_sp.png">
-      </div>
-      <div class="model">
+        <label for="select4">Humidex/windchill</label>
+        <select id="select4">
+          <option value="https://www.meteociel.fr/cartes_obs/humidex_sp.png">Humidex</option>
+          <option value="https://www.meteociel.fr/cartes_obs/windchill_sp.png">Windchill</option>
+        </select>
+        <img id="img4" src="">
       </div>
     </div>
+
+    <div class="grid-2">
+      <div class="model">
+         <p style="font-size: 15px;">Presión</p>
+        <img src="https://www.meteociel.fr/cartes_obs/temp2_sp_1h.png">
+      </div>
+      <div class="model">
+         <p style="font-size: 15px;">Temperatura mar</p>
+        <img id="sstImg" src="">
+      </div>
+    </div>
+
+
+
+
+
+    
     <hr>
     <div class="grid">
       <div class="model">
@@ -120,19 +139,41 @@
     </div>
     <footer>Datos de Meteociel (Meteo-France), AEMET, EUMETNET, Windy, Blitzortung</footer>
     <script>
-      const selectorAcumulacion = document.getElementById("acumulacionHoras");
-      const imagenAcumulacion = document.getElementById("mapaAcumulacion");
-      function actualizarMapaLluvia() {
-        let valor = selectorAcumulacion.value;
-        if (valor === "01") {
-          imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr1h_sp.png";
-        }
-        if (valor === "24") {
-          imagenAcumulacion.src = "https://www.meteociel.fr/cartes_obs/rr2_sp.png";
-        }
+      const sstImg = document.getElementById("sstImg");
+      const ayer = new Date();
+      ayer.setDate(ayer.getDate() - 1);
+      const year = ayer.getFullYear();
+      const month = (ayer.getMonth() + 1).toString().padStart(2, "0");
+      const day = ayer.getDate().toString().padStart(2, "0");
+      sstImg.src = `https://www.meteociel.fr/obs/sst/${year}-${month}-${day}sp.gif`;
+
+      const s1 = document.getElementById("select1");
+      const s2 = document.getElementById("select2");
+      const s3 = document.getElementById("select3");
+      const s4 = document.getElementById("select4");
+
+      const i1 = document.getElementById("img1");
+      const i2 = document.getElementById("img2");
+      const i3 = document.getElementById("img3");
+      const i4 = document.getElementById("img4");
+
+      function vincularSelect(select, img) {
+        select.addEventListener("change", () => { img.src = select.value; });
+        img.src = select.value;
       }
-      selectorAcumulacion.addEventListener("change", actualizarMapaLluvia);
-      actualizarMapaLluvia();
+
+      vincularSelect(s1, i1);
+      vincularSelect(s2, i2);
+      vincularSelect(s3, i3);
+
+      const mesActual = new Date().getMonth();
+      if ([3, 4, 5, 6, 7, 8].includes(mesActual)) {
+        s4.value = "https://www.meteociel.fr/cartes_obs/humidex_sp.png";
+      } else {
+        s4.value = "https://www.meteociel.fr/cartes_obs/windchill_sp.png";
+      }
+      vincularSelect(s4, i4);
+
       const operaImg = document.getElementById("operaImg");
       const operaSlider = document.getElementById("operaSlider");
       const operaLabel = document.getElementById("operaLabel");

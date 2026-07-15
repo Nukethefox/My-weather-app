@@ -25,8 +25,7 @@
         <img src="https://www.meteociel.fr/cartes_obs/temp_sp.png">
       </div>
     </div>
-
-<div class="grid-2">
+    <div class="grid-2">
       <div class="model">
         <label for="select1">Punto de rocio, humedad relativa</label>
         <select id="select1">
@@ -44,7 +43,6 @@
         <img id="img2" src="">
       </div>
     </div>
-
     <div class="grid-2">
       <div class="model">
         <label for="select3">Viento medio/rachas</label>
@@ -63,7 +61,6 @@
         <img id="img4" src="">
       </div>
     </div>
-
     <div class="grid-2">
       <div class="model">
          <p style="font-size: 15px;">Presión</p>
@@ -73,13 +70,7 @@
          <p style="font-size: 15px;">Temperatura mar</p>
         <img id="sstImg" src="">
       </div>
-    </div>
-
-
-
-
-
-    
+    </div>    
     <hr>
     <div class="grid">
       <div class="model">
@@ -140,11 +131,13 @@
     <footer>Datos de Meteociel (Meteo-France), AEMET, EUMETNET, Windy, Blitzortung</footer>
     <script>
       const sstImg = document.getElementById("sstImg");
-      const ayer = new Date();
-      ayer.setDate(ayer.getDate() - 1);
-      const year = ayer.getFullYear();
-      const month = (ayer.getMonth() + 1).toString().padStart(2, "0");
-      const day = ayer.getDate().toString().padStart(2, "0");
+      const ahora = new Date();
+      const diasAtras = ahora.getHours() < 21 ? 2 : 1;
+      const mapaFecha = new Date();
+      mapaFecha.setDate(ahora.getDate() - diasAtras);
+      const year = mapaFecha.getFullYear();
+      const month = (mapaFecha.getMonth() + 1).toString().padStart(2, "0");
+      const day = mapaFecha.getDate().toString().padStart(2, "0");
       sstImg.src = `https://www.meteociel.fr/obs/sst/${year}-${month}-${day}sp.gif`;
 
       const s1 = document.getElementById("select1");
